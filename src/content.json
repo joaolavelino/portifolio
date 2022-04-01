@@ -1,0 +1,250 @@
+{
+  "nav": {
+    "pt": {
+      "home": "home",
+      "dev": "web dev",
+      "music": "música",
+      "visual": "artes visuais",
+      "design": "design gráfico",
+      "about": "sobre"
+    },
+    "en": {
+      "home": "home",
+      "dev": "web dev",
+      "music": "music",
+      "visual": "visual arts",
+      "design": "graphic design",
+      "about": "about"
+    }
+  },
+  "home": {
+    "pt": {
+      "title": "Olá, eu sou João Avelino",
+      "tag": "Desenvolvedor web, músico, artista visual.",
+      "end": "E este é o meu portifolio"
+    },
+    "en": {
+      "title": "Hi, I'm João Avelino",
+      "tag": "Web developper, musician, visual artist",
+      "end": "and this is my portifolio"
+    }
+  },
+  "webdev": {
+    "bg": "bgDev",
+    "pt": {
+      "title": "Web Dev",
+      "p1": "Aqui estão alguns dos projetos que trabalhei, todos eles com links para o projeto em si e para o repositório no GitHub.",
+      "toolkit": "Minhas Ferramentas",
+      "projects": "Projetos"
+    },
+    "en": {
+      "title": "Web Dev",
+      "p1": "Here are some of the projects i've worked with, all of them with the links to their GitHub repo and the project itself.",
+      "toolkit": "My Toolkit",
+      "projects": "Projects"
+    },
+    "tools": [
+      "react",
+      "redux",
+      "react router",
+      "styled components",
+      "framer motion",
+      "sass",
+      "javascript",
+      "css3",
+      "html5"
+    ],
+    "projects": [
+      {
+        "id": "wd1",
+        "title": "Homescope",
+        "logo": "homescopelogo",
+        "bg": "homescopebg",
+        "repo": "https://github.com/joaolavelino/portifolio-homescope",
+        "url": "https://homescope.netlify.app/",
+        "pt": {
+          "description": "Homescope é um mockup de um site de imóveis. Uma plataforma que permite centralizar imóveis anunciados em diferentes sites para exibição, com fotos e descritivos.",
+          "librarytagline": "Neste projeto foi usado:"
+        },
+        "en": {
+          "description": "Homescope is a mockup of a real estate website. A platform that allows to centralize listings of different sites, with pictures and descriptions.",
+          "librarytagline": "In this project, I used:"
+        },
+        "librarylist": [
+          "react",
+          "react router",
+          "framer motion",
+          "styled components"
+        ]
+      },
+      {
+        "id": "wd2",
+        "title": "Eruditum",
+        "logo": "eruditumlogo",
+        "bg": "eruditumbg",
+        "repo": "https://github.com/joaolavelino/portifolio-eruditum",
+        "url": "https://eruditum.netlify.app/",
+        "pt": {
+          "description": "Eruditum é uma plataforma criada com o objetivo de tornar mais simples a descoberta da música clássica. Apresenta os compositores por época, suas principais peças, exibe playlists  além de apresentar a cada visita uma peça aleatória para possibilitar a descoberta de compositores menos conhecidos, porém importantes. O projeto foi construído utilizando a API Open Opus, um banco de dados de metadata relacionado a musica clássica.",
+          "librarytagline": "Neste projeto foi usado:"
+        },
+        "en": {
+          "description": "Eruditum is a platform created with the goal of turning the discovery of classical music a simpler task. It presents the composers by period, playlists, and on each refresh it presents a new random piece, so less well-known, but still important composers can be displayed. The project was built using the Open Opus API, a classical music metadata database. ",
+          "librarytagline": "In this project I used:"
+        },
+        "librarylist": [
+          "react",
+          "redux",
+          "react router",
+          "framer motion",
+          "styled components"
+        ]
+      },
+      {
+        "id": "wd3",
+        "title": "Ignite",
+        "logo": "ignitelogo",
+        "bg": "ignitebg",
+        "repo": "https://github.com/joaolavelino/devEd-3-ignite",
+        "url": "https://joaolavelino-ignite.netlify.app",
+        "pt": {
+          "description": "Ignite é um projeto criado durante o curso Creative React and Redux do DevelopedByEd. Ele é um database de games, no estilo do IMDB. Ele foi construído a partir da API RAWG. Após a conclusão do curso, o projeto ganhou algumas novas características, como tratamento de busca, de erros e de carregamento, além de uma melhora na exibição das imagens da página com a criaçao da galeria de sliders. ",
+          "librarytagline": "Neste projeto foi usado:"
+        },
+        "en": {
+          "description": "Ignite is a project created during the Creative React and Redux Course by DevelopedByEd. It's a video-games database, in the style of IMDB. It was built using the RAWG API. After the course conclusion, the project was improved and error, search and loading treatment were implemented as well slider galeries.",
+          "librarytagline": "In this project I used:"
+        },
+        "librarylist": [
+          "react",
+          "redux",
+          "react router",
+          "framer motion",
+          "styled components"
+        ]
+      },
+      {
+        "id": "wd4",
+        "title": "Waves",
+        "logo": "waveslogo",
+        "bg": "wavesbg",
+        "pt": {
+          "description": "Waves foi o primeiro projeto criado durante o curso Creative React and Redux do DevelopedByEd. Consiste em um player de música, que traz faixas da plataforma Chillhop Music. O que foi interessante nesse projeto foi aprender a lidar com a exibição de mídia dentro de um projeto em React, além de tornar mais natural o desenvolvimento dentro da lib.",
+          "librarytagline": "Neste projeto foi usado:"
+        },
+        "en": {
+          "description": "Waves was the first project created on the Creative React and Redux Course by DevelopedByEd. It's a music played, that displays tracks from the Chillhop Music project. The most interesting about the project was to learn how to deal with media on a React project, and also getting more confortable on the React development environment.",
+          "librarytagline": "In this project I used:"
+        },
+        "librarylist": ["react", "sass"]
+      }
+    ]
+  },
+  "design": {
+    "bg": "bgDev",
+    "pt": {
+      "title": "Design Gráfico",
+      "p1": "Aqui estão alguns de meus projetos de design gráfico, criaçao de logos, impressos e material para social media. ",
+      "toolkit": "Minhas ferramentas",
+      "projects": "Projetos"
+    },
+    "en": {
+      "title": "Graphic Design",
+      "p1": "Here are some of my graphic design projects: Logo creation, visual identity concepts and social media material.",
+      "toolkit": "My Toolkit",
+      "projects": "Projects"
+    },
+    "tools": ["inkscape", "figma", "illustrator"],
+    "projects": [
+      {
+        "id": "de1",
+        "title": "Sina FCB",
+        "bg": "sinabg",
+        "logo": "sinalogo",
+        "pt": {
+          "description": "Cardápio elaborado para o SINA FCB. Originalmente o cardápio era desenhado na parede, portanto a ideia deste projeto foi trazer esta identidade visual desenhada para o cardápio impresso. Desde então vemos desenvolvendo várias linhas do cardápio sempre trazendo essa referência visual"
+        },
+        "en": {
+          "description": "Menu created for Sina FCB. Originally the menu was drawn by myself on the wall behind the counter, so the idea of this project was to bring this visual identity to the printed menu. Since then we're developing different versions of the menu, always bringin this visual reference. "
+        }
+      },
+      {
+        "id": "de2",
+        "title": "Vina Bikes",
+        "bg": "vinabikesbg",
+        "logo": "vinabikeslogo",
+        "pt": {
+          "description": "Na Vina Bikes o projeto foi bastante completo, trabalhando desde a definiçao da identidade visual da marca, a logo, e a criaçao de uma identidade da empresa em  mídias sociais, incluido a elaboraçao de artes, redação de posts e a criação da logo para a equipe de ciclismo da loja."
+        },
+        "en": {
+          "description": "With Vina Bikes the project was rather complete, since the conception of a visual identity for the brand, their logo, and then the identity for the brand on the social media, including the visual materia, written material and the creation of the logo for the shop's cycling team."
+        }
+      },
+      {
+        "id": "de3",
+        "title": "Logos",
+        "logo": "logoslogo",
+        "bg": "logosbg",
+        "pt": {
+          "description": "Criação de logos para diferentes segmentos, desde escritórios, empresa de logística, doces, fábrica, até banda."
+        },
+        "en": {
+          "description": "Logo creation for different types of business: offices, logistic business, candy factories and even for a band."
+        }
+      }
+    ]
+  },
+  "visual": {
+    "bg": "bgVisual",
+    "pt": {
+      "title": "Artes Visuais",
+      "p1": "Aqui estão alguns de meus trabalhos de artes visuais, incluindo lettering, arte em paredes e quadros."
+    },
+    "en": {
+      "title": "Visual Arts",
+      "p1": "Here are some of my visual arts works, including hand-lettering, wall art and smaller paintings / drawings. "
+    },
+    "projects": [
+      "frida",
+      "emporioavelino",
+      "franz",
+      "floyd",
+      "hop",
+      "hoppy",
+      "walrus",
+      "bb",
+      "luigi1",
+      "bike",
+      "studio",
+      "curitiba",
+      "horus",
+      "trips",
+      "rock",
+      "luigi2",
+      "luigi3"
+    ]
+  },
+  "music": {
+    "bg": "bgMusic",
+    "pt": {
+      "title": "Música",
+      "p1": "Aqui estão composições autorais minhas e covers. Elas estão também disponíveis em todas as plataformas de streaming!"
+    },
+    "en": {
+      "title": "Music",
+      "p1": "Here are my original music and some covers. The original music is available on all the main streaming platforms"
+    }
+  },
+  "about": {
+    "pt": {
+      "p1": "Desenvolvimento web, música, artes visuais, desenho, design gráfico. Este espaço concentra experiências que tive em diferentes áreas ao longo da vida.",
+      "p2": "Há 2 anos estou me desenvolvendo na área de desenvolvimento web. Tenho bastante interessem em desenvolver interfaces de usuário e tenho como objetivo sempre tornar o ambiente do usuário não só visualmente atraente, mas também compreensível. Com o tempo, vou ampliando cada vez mais meu repertório de ferramentas e sempre aprendendo!",
+      "p3": "Sou arquiteto de formação, porém, pouco a pouco, fui descobrindo outras áreas em que me encontrei e a profissão original acabou ficando cada vez mais de lado, mesmo que o aprendizado continua sendo aplicado até hoje."
+    },
+    "en": {
+      "p1": "Web development, music, visual arts, drawings, graphic design. This space gathers my experiences I had in differents fields throughout life",
+      "p2": "For the last two years I'm getting into the web development field. I'm very interested in developing user interfaces and my goal is always making the user environment not only visually pleasant, but also comprehensible. I'm always leaning and broadening my toolkit!",
+      "p3": "I graduated as an architect, but little by little I've been discovering other fields that I find myself very fullfilled and my original profession was slowly set aside. But all the knowledge that I've earned through the years working as an architect are still used."
+    }
+  }
+}
