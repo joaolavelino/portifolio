@@ -1,7 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Bg from "./components/Bg";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
 import GlobalStyles from "./GlobalStyles";
 import About from "./pages/page-about";
@@ -22,9 +22,9 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Bg />
       <BrowserRouter>
         <Header lang={lang} setLang={setLang} />
+
         <AnimatePresence exitBeforeEnter>
           <Routes>
             <Route exact path="/" element={<Home lang={lang} />} key="page1" />
@@ -72,6 +72,7 @@ function App() {
             />
           </Routes>
         </AnimatePresence>
+        <Footer lang={lang} />
       </BrowserRouter>
     </>
   );

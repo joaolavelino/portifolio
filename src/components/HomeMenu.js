@@ -6,60 +6,58 @@ import design from "../img/design.png";
 import art from "../img/art.png";
 import music from "../img/music.png";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import { enlarge } from "../util/animation";
+import { buttonAnimation, staggerAnimation } from "../util/animation";
+import { useNavigate } from "react-router";
 
 const HomeMenu = () => {
+  const navigate = useNavigate();
+
   return (
-    <StyledAside variants={enlarge} initial="hidden" animate="show" exit="exit">
-      <Link to="/about">
-        <img src={about} alt="about link" />
-      </Link>
-      <Link to="/webdev">
-        <img src={webdev} alt="webdev link" />
-      </Link>
-      <Link to="/music">
-        <img src={music} alt="music link" />
-      </Link>
-      <Link to="/design">
-        <img src={design} alt="design link" />
-      </Link>
-      <Link to="/visual">
-        <img src={art} alt="art link" />
-      </Link>
-    </StyledAside>
+    <StyledHomeMenu variants={staggerAnimation}>
+      <motion.button
+        variants={buttonAnimation}
+        onClick={() => navigate("/about")}
+      >
+        <img src={about} alt="about" />
+      </motion.button>
+      <motion.button
+        variants={buttonAnimation}
+        onClick={() => navigate("/webdev")}
+      >
+        <img src={webdev} alt="webdev" />
+      </motion.button>
+      <motion.button
+        variants={buttonAnimation}
+        onClick={() => navigate("/design")}
+      >
+        <img src={design} alt="design" />
+      </motion.button>
+      <motion.button
+        variants={buttonAnimation}
+        onClick={() => navigate("/music")}
+      >
+        <img src={music} alt="music" />
+      </motion.button>
+      <motion.button
+        variants={buttonAnimation}
+        onClick={() => navigate("/visual")}
+      >
+        <img src={art} alt="art" />
+      </motion.button>
+    </StyledHomeMenu>
   );
 };
 
-const StyledAside = styled(motion.aside)`
+const StyledHomeMenu = styled(motion.section)`
+  width: 100%;
+  padding: 2rem 5rem;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  padding: 1rem 1rem;
-  border-radius: 1rem;
-  background-color: orange;
-  align-items: center;
+  flex-flow: row wrap;
   justify-content: center;
-  filter: drop-shadow(4px 4px 10px rgb(0 0 0 / 0.7));
-  @media screen and (min-width: 768px) {
-    flex-direction: column;
-    gap: 4rem;
-    padding: 2rem 1rem;
-    align-items: center;
-  }
-
-  img {
-    width: 3rem;
-    transition: 0.2s;
-    filter: drop-shadow(4px 4px 10px rgb(0 0 0 / 0.7));
-    &:hover {
-      transform: scale(1.2);
-    }
-    @media screen and (max-width: 767px) {
-      width: 3rem;
-    }
+  align-items: center;
+  gap: 1rem;
+  @media screen and (max-width: 374px) {
+    padding: 2rem 2rem;
   }
 `;
 

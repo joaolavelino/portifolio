@@ -2,40 +2,30 @@ import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import HomeAnimation from "../components/HomeAnimation";
+import HomeFeatured from "../components/HomeFeatured";
 import HomeMenu from "../components/HomeMenu";
 import HomeTitle from "../components/HomeTitle";
-import { pageAnimation } from "../util/animation";
+import { staggerAnimation } from "../util/animation";
 
 const Home = ({ lang }) => {
   return (
     <>
-      <HomeAnimation />
       <StyledHome
-        variants={pageAnimation}
+        variants={staggerAnimation}
         initial="hidden"
         animate="show"
         exit="exit"
       >
-        <div className="col-div">
-          <HomeTitle lang={lang} />
-          <HomeMenu />
-        </div>
+        <HomeTitle lang={lang} />
+        <div className="break" />
+        <HomeMenu />
+        <div className="break" />
+        <HomeFeatured lang={lang} />
       </StyledHome>
     </>
   );
 };
 
-const StyledHome = styled(motion.main)`
-  .col-div {
-    width: 100%;
-    gap: 4rem;
-    justify-content: center;
-    @media screen and (min-width: 768px) {
-      flex-direction: row;
-      justify-content: space-between;
-      gap: 8rem;
-    }
-  }
-`;
+const StyledHome = styled(motion.main)``;
 
 export default Home;

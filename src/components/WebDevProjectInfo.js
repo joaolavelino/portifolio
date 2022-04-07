@@ -3,8 +3,15 @@ import content from "../content.json";
 import { langPack } from "../util/langPack";
 import styled from "styled-components";
 import { useParams } from "react-router";
-import { cardAnimation, cardsStaggerAnimation } from "../util/animation";
+import {
+  projectCardAnimation,
+  reverseStaggerAnimation,
+  cardsStaggerAnimation,
+  cardAnimation,
+} from "../util/animation";
 import { motion } from "framer-motion";
+import { colors } from "../GlobalStyles";
+import github from "../img/github.png";
 
 const WebDevProjectInfo = ({ lang }) => {
   const { id } = useParams();
@@ -12,18 +19,28 @@ const WebDevProjectInfo = ({ lang }) => {
   const text = langPack(project, lang);
 
   return (
-    <StyledWebDevProjectInfo>
+    <StyledWebDevProjectInfo variants={reverseStaggerAnimation}>
       {id && (
         <>
-          <div className="bg">
-            <div className="top-gradient" />
+          <motion.div className="image" variants={projectCardAnimation}>
             <img
               src={process.env.PUBLIC_URL + `/img/projects/${project.bg}.png`}
               alt="project screenshot"
+              className="bg"
             />
-          </div>
-          <div className="content">
-            <div className="bottom-gradient" />
+            <div className="links">
+              <a href={project.repo} target="_blank" rel="noreferrer">
+                <button className="small">
+                  <img src={github} alt="github link" />
+                </button>
+              </a>
+              <a href={project.url} target="_blank" rel="noreferrer">
+                <button className="small">www</button>
+              </a>
+            </div>
+          </motion.div>
+          <motion.div className="content" variants={projectCardAnimation}>
+            <h3 id="project-title">{project.title}</h3>
             <div className="title">
               <motion.div
                 className="title-libs"
@@ -38,75 +55,65 @@ const WebDevProjectInfo = ({ lang }) => {
                   />
                 ))}
               </motion.div>
-              <h3>{project.title}</h3>
-              <div className="links">
-                <a href={project.repo}>
-                  <button className="small">Github</button>
-                </a>
-                <a href={project.url}>
-                  <button className="small">Project</button>
-                </a>
-              </div>
             </div>
-            <div className="info">
-              <p>{text.description}</p>
-              <h4>{text.librarytagline}</h4>
-              <ul>
-                {project.librarylist.map((e, index) => (
-                  <li key={`libname${index}`}>{e}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+            <p>{text.description}</p>
+          </motion.div>
         </>
       )}
     </StyledWebDevProjectInfo>
   );
 };
 
-const StyledWebDevProjectInfo = styled.section`
-  min-height: 100vh;
+const StyledWebDevProjectInfo = styled(motion.section)`
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+  @media screen and (min-width: 1024px) {
+    flex-direction: row;
+    padding-left: 8rem;
+    padding-top: 5rem;
+    height: calc(100vh - 200px - 3rem);
+  }
 
-  .bg {
-    position: fixed;
-    top: 0;
-
-    .top-gradient {
-      position: fixed;
-      width: 100vw;
-      height: 199px;
-      left: 0px;
-      top: 0px;
-      z-index: 5;
-      background: linear-gradient(
-        180deg,
-        #000000 8.54%,
-        rgba(0, 0, 0, 0) 74.87%
-      );
+  .image {
+    position: relative;
+    height: 423px;
+    width: 100%;
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+      height: 100%;
     }
 
-    img {
-      width: 100vw;
-      height: 60vh;
+    .bg {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: left;
     }
+    .links {
+      position: absolute;
+      display: flex;
+      bottom: 2rem;
+      right: 2rem;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
   }
   .content {
-    padding: 30rem 3rem 0;
+    padding: 3rem 2rem 5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    background-color: ${colors.dark};
+    color: ${colors.light};
+    @media screen and (min-width: 1024px) {
+      width: 50%;
+      height: 100%;
+      padding-right: 8rem;
+    }
 
-    .bottom-gradient {
-      position: absolute;
-      width: 100vw;
-      height: calc(100% + 5rem);
-      left: 0px;
-      top: 25rem;
-      z-index: 9;
-      background: linear-gradient(180deg, #000000 80%, rgba(0, 0, 0, 0) 100%);
-      transform: matrix(1, 0, 0, -1, 0, 0);
+    #project-title {
+      color: ${colors.light};
     }
   }
   .title {
@@ -114,16 +121,11 @@ const StyledWebDevProjectInfo = styled.section`
     z-index: 10;
   }
 
-  .links {
-    display: flex;
-    gap: 2rem;
-    padding: 1rem 0 0;
-  }
   .title-libs {
     display: flex;
     gap: 1rem;
     img {
-      height: 3rem;
+      height: 2.5rem;
     }
   }
   .info {

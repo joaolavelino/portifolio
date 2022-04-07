@@ -1,13 +1,18 @@
 import React from "react";
 import styled from "styled-components";
+import { colors } from "../GlobalStyles";
 import en from "../img/en.png";
 import pt from "../img/pt.png";
 
 const NavLanguage = ({ setLang }) => {
   return (
     <StyledNavLanguage className="flags">
-      <img src={pt} alt="portuguese" onClick={() => setLang("pt")} />
-      <img src={en} alt="english" onClick={() => setLang("en")} />
+      <p className="hover-scale-link" onClick={() => setLang("pt")}>
+        PT
+      </p>
+      <p className="hover-scale-link" onClick={() => setLang("en")}>
+        EN
+      </p>
     </StyledNavLanguage>
   );
 };
@@ -17,12 +22,11 @@ const StyledNavLanguage = styled.div`
   display: flex;
   justify-content: end;
   gap: 1.5rem;
-  @media screen and (min-width: 1050px) {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
+  color: ${colors.light};
+  @media screen and (min-width: 1240px) {
     width: auto;
     gap: 1rem;
+    color: ${colors.dark};
   }
   img {
     height: 1.5rem;
@@ -31,9 +35,13 @@ const StyledNavLanguage = styled.div`
     &:hover {
       transform: scale(1.2);
     }
-    @media screen and (min-width: 1050px) {
+    @media screen and (min-width: 1240px) {
       height: 1rem;
     }
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 900;
   }
 `;
 

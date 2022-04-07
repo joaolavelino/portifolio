@@ -1,13 +1,13 @@
 import React from "react";
 import DesignProjectInfo from "../components/DesignProjectInfo";
 import { motion } from "framer-motion";
-import { pageAnimation } from "../util/animation";
+import { staggerAnimation } from "../util/animation";
 
 const DesignProject = ({ lang }) => {
   const id = "de1";
   return (
     <motion.main
-      variants={pageAnimation}
+      variants={staggerAnimation}
       initial="hidden"
       animate="show"
       exit="exit"

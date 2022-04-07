@@ -2,16 +2,28 @@ import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import close from "../img/close.png";
+import { fullScreenAnimation } from "../util/animation";
 
 const DesignFullScreen = ({ image, setFullScreen }) => {
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      setFullScreen(false);
+    }
+  });
+
   return (
-    <StyledDesignFullScreen>
-      <img
+    <StyledDesignFullScreen
+      variants={fullScreenAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
+      <motion.img
         src={close}
         alt="close"
         onClick={() => setFullScreen(false)}
         className="close hover-scale-link"
-      ></img>
+      ></motion.img>
       <motion.img
         src={image}
         alt="full size"
@@ -33,6 +45,9 @@ const StyledDesignFullScreen = styled(motion.section)`
   align-items: center;
   z-index: 30;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   .close {
     position: fixed;
@@ -43,8 +58,8 @@ const StyledDesignFullScreen = styled(motion.section)`
   }
 
   .image {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     object-fit: contain;
   }
 `;

@@ -2,37 +2,30 @@ import React from "react";
 import styled from "styled-components";
 import content from "../content.json";
 import { langPack } from "../util/langPack";
-import avatar from "../img/avatar.png";
 import { motion } from "framer-motion";
+import { paragraphAnimation, staggerAnimation } from "../util/animation";
 
 const AboutBody = ({ lang }) => {
   const pageText = content.about;
   const text = langPack(pageText, lang);
   return (
-    <StyledAboutBody className="resp-div">
-      <img src={avatar} alt="avatar" />
-      <div className="text">
-        <p>{text.p1}</p>
-        <p>{text.p2}</p>
-        <p>{text.p3}</p>
-      </div>
+    <StyledAboutBody variants={staggerAnimation}>
+      <motion.p variants={paragraphAnimation}>{text.p1}</motion.p>
+      <motion.p variants={paragraphAnimation}>{text.p2}</motion.p>
+      <motion.p variants={paragraphAnimation}>{text.p3}</motion.p>
     </StyledAboutBody>
   );
 };
 
 const StyledAboutBody = styled(motion.section)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
   align-items: center;
   gap: 3rem;
-  .text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3rem;
-    width: 100%;
-  }
-  img {
+  @media screen and (min-width: 1024px) {
     width: 60%;
-    max-width: 300px;
   }
   p {
     text-align: justify;

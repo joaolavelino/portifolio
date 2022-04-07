@@ -1,19 +1,26 @@
 import React from "react";
+import styled from "styled-components";
 import VisualTitle from "../components/VisualTitle";
 import { motion } from "framer-motion";
-import { pageAnimation } from "../util/animation";
+import { staggerAnimation } from "../util/animation";
 
 const Visual = ({ lang }) => {
   return (
-    <motion.main
-      variants={pageAnimation}
+    <StyledVisual
+      variants={staggerAnimation}
       initial="hidden"
       animate="show"
       exit="exit"
     >
       <VisualTitle lang={lang} />
-    </motion.main>
+    </StyledVisual>
   );
 };
+
+const StyledVisual = styled(motion.main)`
+  @media screen and (min-width: 1024px) {
+    padding-bottom: 0;
+  }
+`;
 
 export default Visual;

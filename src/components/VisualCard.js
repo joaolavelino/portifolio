@@ -16,8 +16,9 @@ const VisualCard = ({ src, alt, e }) => {
       className="hover-scale-link box-shadow"
       onClick={() => enterGallery(e)}
       variants={cardAnimation}
+      layoutId="visual-img"
     >
-      <img src={src} alt={alt} />
+      <motion.img src={src} alt={alt} className="visual-card-img" />
     </StyledVisualCard>
   );
 };
@@ -27,13 +28,13 @@ const StyledVisualCard = styled(motion.div)`
   height: 10rem;
   overflow: hidden;
   @media screen and (min-width: 1024px) {
-    width: 20rem;
-    height: 20rem;
+    width: 12rem;
+    height: 12rem;
   }
-  img {
-    object-fit: cover;
+  .visual-card-img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     transition: 0.3s;
     &:hover {
       transform: scale(1.2);

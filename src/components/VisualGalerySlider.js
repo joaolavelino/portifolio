@@ -1,29 +1,40 @@
-import React, { useState } from "react";
+import React from "react";
 import content from "../content.json";
 import styled from "styled-components";
 import chevronLeft from "../img/chevronLeft.png";
 import chevronRight from "../img/chevronRight.png";
 import close from "../img/close.png";
 import { useNavigate } from "react-router";
+import { motion } from "framer-motion";
 
 const VisualGalerySlider = ({ id }) => {
-  const [show, setShow] = useState(id);
   const array = content.visual.projects;
-  const imagePosition = array.indexOf(show);
+  const imagePosition = array.indexOf(id);
   console.log(imagePosition);
-
   const navigate = useNavigate();
 
-  const NextImage = () => {
+  const nextImage = () => {
     imagePosition === array.length - 1
-      ? setShow(array[0])
-      : setShow(array[imagePosition + 1]);
+      ? navigate(`/visual/gallery/${array[0]}`)
+      : navigate(`/visual/gallery/${array[imagePosition + 1]}`);
   };
-  const PreviousImage = () => {
+  const previousImage = () => {
     imagePosition === 0
-      ? setShow(array[array.length - 1])
-      : setShow(array[imagePosition - 1]);
+      ? navigate(`/visual/gallery/${array[array.length - 1]}`)
+      : navigate(`/visual/gallery/${array[imagePosition - 1]}`);
   };
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") {
+      navigate("/visual");
+    }
+    if (event.key === "37") {
+      previousImage();
+    }
+    if (event.key === "39") {
+      nextImage();
+    }
+  });
 
   return (
     <StyledVisualGalerySlider>
@@ -32,38 +43,35 @@ const VisualGalerySlider = ({ id }) => {
           src={close}
           alt="close"
           className="hover-scale-link"
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/visual")}
+          layoutId="visual-img"
         />
       </div>
       <div className="buttons">
         <img
           src={chevronLeft}
           alt="left arrow"
-          onClick={PreviousImage}
+          onClick={previousImage}
           className="hover-scale-link"
         />
         <img
           src={chevronRight}
           alt="right arrow"
-          onClick={NextImage}
+          onClick={nextImage}
           className="hover-scale-link"
         />
       </div>
-      <div className="project-image">
-        {array.map((e, index) => (
-          <img
-            className={`slider ${e !== show ? "hidden" : ""}`}
-            src={process.env.PUBLIC_URL + `/img/visual/${e}.png`}
-            alt={`${show}`}
-            key={`visualSlider${index}`}
-          />
-        ))}
-      </div>
+      <motion.div className="project-image">
+        <motion.img
+          src={process.env.PUBLIC_URL + `/img/visual/${id}.png`}
+          alt={id}
+        />
+      </motion.div>
     </StyledVisualGalerySlider>
   );
 };
 
-const StyledVisualGalerySlider = styled.section`
+const StyledVisualGalerySlider = styled(motion.section``)`
   background-color: black;
   position: fixed;
   top: 0;

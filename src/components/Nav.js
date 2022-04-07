@@ -5,6 +5,7 @@ import { langPack } from "../util/langPack";
 import NavLanguage from "./NavLanguage";
 import { AiOutlineClose } from "react-icons/ai";
 import { useNavigate } from "react-router";
+import { colors } from "../GlobalStyles";
 
 const Nav = ({ lang, setLang, showNav, setShowNav }) => {
   const pageText = content.nav;
@@ -24,7 +25,7 @@ const Nav = ({ lang, setLang, showNav, setShowNav }) => {
       <div className="nav-close">
         <AiOutlineClose
           onClick={() => setShowNav(false)}
-          className="mobile-icons"
+          className="close-button"
         />
       </div>
       <ul>
@@ -88,11 +89,11 @@ const StyledNav = styled.nav`
   display: flex;
   width: 15rem;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
   top: 0;
   right: 1rem;
-  background-color: black;
-  padding: 2rem 1rem 1rem;
+  background-color: ${colors.dark};
+  padding: 1rem 1rem 1rem;
   transition: 0.2s ease-in-out;
   &.hidden {
     top: -460px;
@@ -100,6 +101,20 @@ const StyledNav = styled.nav`
       top: 0;
     }
   }
+
+  .nav-close {
+    text-align: right;
+    .close-button {
+      font-size: 2rem;
+      color: ${colors.light};
+      cursor: pointer;
+      transition: 0.2s;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
   ul {
     list-style: none;
     display: flex;
@@ -107,9 +122,10 @@ const StyledNav = styled.nav`
     gap: 1rem;
     cursor: pointer;
     li {
-      text-transform: uppercase;
+      font-weight: 700;
       position: relative;
       z-index: 1;
+      color: ${colors.light};
       &:hover {
         color: black;
       }
@@ -122,7 +138,7 @@ const StyledNav = styled.nav`
         width: 0;
         height: 100%;
         transition: 0.2s;
-        background-color: orange;
+        background-color: ${colors.action};
       }
 
       .show {
@@ -130,19 +146,8 @@ const StyledNav = styled.nav`
       }
     }
   }
-  .nav-close {
-    text-align: right;
-  }
-  svg {
-    font-size: 2rem;
-    cursor: pointer;
-    transition: 0.2s;
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
 
-  @media screen and (min-width: 1050px) {
+  @media screen and (min-width: 1240px) {
     position: static;
     width: auto;
     flex-direction: row;
@@ -151,16 +156,21 @@ const StyledNav = styled.nav`
     gap: 3rem;
     align-items: center;
 
+    .nav-close {
+      display: none;
+    }
+
     ul {
       flex-direction: row;
       align-items: center;
       gap: 2rem;
       li {
         font-size: 1rem;
+        text-transform: lowercase;
         transition: 0.2s;
+        color: ${colors.dark};
         &:hover {
-          transform: scale(1.1);
-          color: white;
+          color: ${colors.action};
         }
         .underline {
           position: absolute;
@@ -170,7 +180,7 @@ const StyledNav = styled.nav`
           width: 0;
           height: 3px;
           transition: 0.2s;
-          background-color: orange;
+          background-color: ${colors.action};
         }
         .show {
           width: 100%;

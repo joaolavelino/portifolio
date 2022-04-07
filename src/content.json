@@ -19,15 +19,26 @@
   },
   "home": {
     "pt": {
-      "title": "Olá, eu sou João Avelino",
-      "tag": "Desenvolvedor web, músico, artista visual.",
-      "end": "E este é o meu portifolio"
+      "h1": "webdev,",
+      "h2": "música,",
+      "h3": "design &",
+      "h4": "artes visuais",
+      "featured": "Destaques"
     },
     "en": {
-      "title": "Hi, I'm João Avelino",
-      "tag": "Web developper, musician, visual artist",
-      "end": "and this is my portifolio"
-    }
+      "h1": "webdev,",
+      "h2": "music,",
+      "h3": "design &",
+      "h4": "visual arts",
+      "featured": "Featured projects"
+    },
+    "featured": [
+      { "name": "homescope", "type": "webdev", "id": "wd1" },
+      { "name": "eruditum", "type": "webdev", "id": "wd2" },
+      { "name": "sina", "type": "design", "id": "de1" },
+      { "name": "ghost", "type": "music" },
+      { "name": "hop", "type": "visual" }
+    ]
   },
   "webdev": {
     "bg": "bgDev",
@@ -51,8 +62,7 @@
       "framer motion",
       "sass",
       "javascript",
-      "css3",
-      "html5"
+      "css3"
     ],
     "projects": [
       {

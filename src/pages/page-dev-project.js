@@ -2,12 +2,12 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import React from "react";
 import WebDevProjectInfo from "../components/WebDevProjectInfo";
-import { pageAnimation } from "../util/animation";
+import { staggerAnimation } from "../util/animation";
 
 const WebDevProject = ({ lang }) => {
   return (
     <StyledWebDevProject
-      variants={pageAnimation}
+      variants={staggerAnimation}
       initial="hidden"
       animate="show"
       exit="exit"
@@ -17,8 +17,6 @@ const WebDevProject = ({ lang }) => {
   );
 };
 
-const StyledWebDevProject = styled(motion.main)`
-  padding: 0;
-`;
+const StyledWebDevProject = styled(motion.main)``;
 
 export default WebDevProject;

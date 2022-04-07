@@ -35,7 +35,6 @@ const StyledMusicEmbed = styled.section`
   flex-flow: row wrap;
   gap: 3rem;
   justify-content: center;
-  padding: 3rem 0;
 `;
 
 export default MusicEmbed;
