@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { colors } from "../GlobalStyles";
-import en from "../img/en.png";
-import pt from "../img/pt.png";
 
 const NavLanguage = ({ setLang }) => {
   return (

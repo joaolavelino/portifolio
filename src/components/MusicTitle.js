@@ -93,6 +93,7 @@ const StyledMusicTitle = styled(motion.div)`
   gap: 2rem;
   @media screen and (min-width: 1024px) {
     height: calc(100vh - 200px - 3rem);
+    min-height: 600px;
     flex-direction: row;
     .break {
       display: none;

@@ -256,5 +256,15 @@
       "p2": "For the last two years I'm getting into the web development field. I'm very interested in developing user interfaces and my goal is always making the user environment not only visually pleasant, but also comprehensible. I'm always leaning and broadening my toolkit!",
       "p3": "I graduated as an architect, but little by little I've been discovering other fields that I find myself very fullfilled and my original profession was slowly set aside. But all the knowledge that I've earned through the years working as an architect are still used."
     }
+  },
+  "error": {
+    "en": {
+      "title": "Page not found",
+      "p1": "You're going to be redirected to home."
+    },
+    "pt": {
+      "title": "Página nao encontrada",
+      "p1": "Você será redirecionado para a home."
+    }
   }
 }

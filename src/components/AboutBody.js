@@ -22,6 +22,7 @@ const StyledAboutBody = styled(motion.section)`
   flex-direction: column;
   align-items: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
   align-items: center;
   gap: 3rem;
   @media screen and (min-width: 1024px) {

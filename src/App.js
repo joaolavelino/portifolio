@@ -9,6 +9,7 @@ import Design from "./pages/page-design";
 import DesignProject from "./pages/page-design-project";
 import WebDev from "./pages/page-dev";
 import WebDevProject from "./pages/page-dev-project";
+import Error from "./pages/page-error";
 import Home from "./pages/page-home";
 import Music from "./pages/page-music";
 import Visual from "./pages/page-visual";
@@ -70,6 +71,7 @@ function App() {
               element={<DesignProject lang={lang} />}
               key="page11"
             />
+            <Route path="*" element={<Error lang={lang} />} key="page12" />
           </Routes>
         </AnimatePresence>
         <Footer lang={lang} />

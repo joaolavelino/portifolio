@@ -9,6 +9,7 @@ import visual from "../img/art.png";
 import music from "../img/music.png";
 import { colors } from "../GlobalStyles";
 import { buttonAnimation, staggerAnimation } from "../util/animation";
+import { Link } from "react-router-dom";
 
 const HomeFeatured = ({ lang }) => {
   const pageText = content.home;
@@ -56,9 +57,9 @@ const HomeFeatured = ({ lang }) => {
           <h4>{obj.name}</h4>
 
           <footer>
-            <a href={link}>
+            <Link to={link}>
               <button className="text">check it out!</button>
-            </a>
+            </Link>
           </footer>
         </div>
       </motion.article>

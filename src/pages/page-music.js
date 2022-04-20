@@ -1,5 +1,4 @@
 import React from "react";
-import MusicEmbed from "../components/MusicEmbed";
 import MusicTitle from "../components/MusicTitle";
 import { pageAnimation } from "../util/animation";
 import { motion } from "framer-motion";

@@ -71,7 +71,7 @@ const VisualGalerySlider = ({ id }) => {
   );
 };
 
-const StyledVisualGalerySlider = styled(motion.section``)`
+const StyledVisualGalerySlider = styled(motion.section)`
   background-color: black;
   position: fixed;
   top: 0;
