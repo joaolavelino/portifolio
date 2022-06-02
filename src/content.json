@@ -56,7 +56,9 @@
     },
     "tools": [
       "react",
+      "next",
       "redux",
+      "sanity",
       "react router",
       "styled components",
       "framer motion",
@@ -138,6 +140,7 @@
         "title": "Waves",
         "logo": "waveslogo",
         "bg": "wavesbg",
+        "url": "https://joaolavelino-music-player.netlify.app",
         "pt": {
           "description": "Waves foi o primeiro projeto criado durante o curso Creative React and Redux do DevelopedByEd. Consiste em um player de música, que traz faixas da plataforma Chillhop Music. O que foi interessante nesse projeto foi aprender a lidar com a exibição de mídia dentro de um projeto em React, além de tornar mais natural o desenvolvimento dentro da lib.",
           "librarytagline": "Neste projeto foi usado:"
@@ -147,6 +150,22 @@
           "librarytagline": "In this project I used:"
         },
         "librarylist": ["react", "sass"]
+      },
+      {
+        "id": "wd5",
+        "title": "Next Kitchen",
+        "logo": "nextkitchenlogo",
+        "bg": "nextkitchenbg",
+        "url": "https://next-kitchen-ten.vercel.app/",
+        "pt": {
+          "description": "Next Kitchen foi meu primeiro projeto usando Next.js e também meu primeiro projeto full-stack. Para este projeto utilizei o Sanity Studio para desenvolver meu back-end e o Next para construir o front-end que consume os dados. O projeto foi iniciado com base em um curso de Next.js, porém continuei o projeto, criando uma UI mais agradável, um mecanismo de busca dinâmica e a seção dos criadores de conteúdo.",
+          "librarytagline": "Neste projeto foi usado:"
+        },
+        "en": {
+          "description": "Next Kitchen im my first Next.js project and also my first full-stack project. For this project I used Sanity Studio to develop my back-end and Next to build the front-end that consumes the data. It's based on a Next.js course, but after I further developed it, creating a friendlier UI and other functionalities as a search function and the content creators section.",
+          "librarytagline": "In this project I used:"
+        },
+        "librarylist": ["next", "sanity"]
       }
     ]
   },
